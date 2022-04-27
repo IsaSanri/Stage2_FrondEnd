@@ -1,0 +1,11 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  
+  .actions{
+    display: flex;
+    align-items: center;
+
+  }
+}

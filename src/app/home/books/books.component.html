@@ -1,0 +1,32 @@
+<div class="article-list">
+    <mat-card>
+      <button mat-icon-button aria-hidden="false" (click)="deleteCard()"><mat-icon>close</mat-icon></button>
+      <mat-card-header>
+        <mat-card-title> Tittle: {{ book.title_display}}</mat-card-title>
+        <mat-card-subtitle>Journal: {{ book.journal }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="book.journal_image" alt="image" />
+      <mat-card-content>
+        <p *ngIf="abstractShow else elseBlock">{{book.abstract}}</p>
+        <ng-template #elseBlock>
+          <p>Please, click on "Show Abstract” button for show the abstract of the article</p>
+        </ng-template>
+      </mat-card-content>
+      <mat-card-actions class="actions">
+        <button mat-raised-button>Edit</button>
+        <button mat-raised-button (click)="showAbstract()">Show Abstract</button>
+        <button mat-raised-button (click)="setEdit()">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
+</div>
+
+
+<!-- <h2>{{ book.tittle_display }}</h2>
+  <p>{{ book.abstract }}</p>
+  <p>{{ book.article_type }}</p>
+  <p>{{ book.author_display }}</p>
+  <p>{{ book.eissn }}</p>
+  <p>{{ book.id }}</p>
+  <p>{{ book.journal }}</p>
+  <p>{{ book.publication_date }}</p>
+  <p>{{ book.score }}</p> -->
